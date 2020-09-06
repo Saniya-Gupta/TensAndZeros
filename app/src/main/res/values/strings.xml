@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Multiplayer</string>
+
+    <string name="single_player">Single Player</string>
+    <string name="about">About</string>
+    <string name="online">Online</string>
+    <string name="exit">Exit</string>
+    <string name="back">Back</string>
+    <string name="accept_request_from">Accept request from</string>
+    <string name="send_request_to">Send Request to</string>
+    <string name="id">ID</string>
+    <string name="please_wait">Please Wait...</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+</resources>

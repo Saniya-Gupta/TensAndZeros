@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "158948627951",
+    "firebase_url": "https://tens-and-zeros.firebaseio.com",
+    "project_id": "tens-and-zeros",
+    "storage_bucket": "tens-and-zeros.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158948627951:android:8e600b774e09e02967121a",
+        "android_client_info": {
+          "package_name": "com.heer.multiplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158948627951-lrrdp4oa7q97qo5eiku6l9osmnj9m525.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqnvonlHtc_-5DvDPKsr3G-wjq-IBvjs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158948627951-lrrdp4oa7q97qo5eiku6l9osmnj9m525.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
