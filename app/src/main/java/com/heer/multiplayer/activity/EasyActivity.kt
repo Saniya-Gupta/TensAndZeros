@@ -1,13 +1,14 @@
-package com.heer.multiplayer
+package com.heer.multiplayer.activity
 
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import com.heer.multiplayer.R
 import java.util.*
 
-class GameActivity : AppCompatActivity() {
+class EasyActivity : AppCompatActivity() {
 
     private var gameState = 0 // 0: Active, 1: X Wins, 2: Y wins 4: Draw
     private var boardState = Array(3) { Array(3) { 0 } } // Stores current status of board
@@ -25,7 +26,7 @@ class GameActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_game)
+        setContentView(R.layout.activity_easy)
 
         img00 = findViewById(R.id.img00)
         img01 = findViewById(R.id.img01)
@@ -64,7 +65,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun displayResult(msg: String) {
-        AlertDialog.Builder(this, R.style.TransparentDialog).setTitle("New Game?")
+        AlertDialog.Builder(this).setTitle("New Game?")
             .setMessage(msg)
             .setCancelable(false)
             .setPositiveButton("Yes") { _, _ ->

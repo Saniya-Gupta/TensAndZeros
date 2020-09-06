@@ -1,4 +1,4 @@
-package com.heer.multiplayer
+package com.heer.multiplayer.activity
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -13,6 +13,7 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.heer.multiplayer.R
 
 
 @Suppress("UNCHECKED_CAST")
@@ -40,7 +41,7 @@ class OnlineLoginActivity : AppCompatActivity() {
 
     // Get user id and email
     private lateinit var loginUserId: String
-    private lateinit var loginUserName: String
+    private var loginUserName: String = ""
     private lateinit var loginUID: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -173,11 +174,11 @@ class OnlineLoginActivity : AppCompatActivity() {
     private fun updateLoginUsers(dataSnapshot: DataSnapshot) {
         var key: String = ""
         val set = HashSet<String>()
-        var i = dataSnapshot.children.iterator()
+        val i = dataSnapshot.children.iterator()
         while(i.hasNext()) {
             key = i.next().key.toString()
             if(!key.equals(loginUserName, true)) {
-                set.add(key);
+                set.add(key)
             }
         }
 
@@ -206,7 +207,7 @@ class OnlineLoginActivity : AppCompatActivity() {
                 }
             }).setNegativeButton("Back", object: DialogInterface.OnClickListener{
                 override fun onClick(dialog: DialogInterface?, which: Int) {
-                    startActivity(Intent(this@OnlineLoginActivity, MenuActivity::class.java))
+                    startActivity(Intent(this@OnlineLoginActivity, MainActivity::class.java))
                     finish()
                 }
             }).show()

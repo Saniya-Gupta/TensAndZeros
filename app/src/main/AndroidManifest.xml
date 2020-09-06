@@ -6,32 +6,28 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OnlineGameActivity"></activity>
+        <activity android:name=".activity.HardActivity"/>
+        <activity android:name=".activity.OfflineActivity" />
+        <activity android:name=".activity.OnlineGameActivity" />
         <activity
-            android:name=".OnlineLoginActivity"
+            android:name=".activity.OnlineLoginActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:theme="@style/FullScreenTheme" />
+            android:screenOrientation="landscape" />
         <activity
-            android:name=".GameActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:theme="@style/FullScreenTheme" />
+            android:name=".activity.EasyActivity"/>
         <activity
-            android:name=".MenuActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:theme="@style/FullScreenTheme" />
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:theme="@style/FullScreenTheme">
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

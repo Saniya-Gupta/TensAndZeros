@@ -1,16 +1,31 @@
 <resources>
     <string name="app_name">Multiplayer</string>
 
-    <string name="single_player">Single Player</string>
-    <string name="about">About</string>
     <string name="online">Online</string>
-    <string name="exit">Exit</string>
     <string name="back">Back</string>
     <string name="accept_request_from">Accept request from</string>
     <string name="send_request_to">Send Request to</string>
     <string name="id">ID</string>
-    <string name="please_wait">Please Wait...</string>
+    <string name="please_wait">Please Wait…</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="single_player">Single Player</string>
+    <string name="multiPlayer">Multi Player</string>
+    <string name="leaderBoard">Leader Board</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="offline">Offline</string>
+    <string name="replay">Replay</string>
+
+    <string name="statusY">Y\'s turn - Tap to Play</string>
+    <string name="statusX">X\'s turn - Tap to play</string>
+    <string name="x_has_won">X has won</string>
+    <string name="y_has_won">Y has won</string>
+    <string name="tie">Tie</string>
 
 </resources>

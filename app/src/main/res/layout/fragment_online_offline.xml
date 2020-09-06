@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragment.LevelsFragment">
+
+    <Button
+        android:id="@+id/btnOffline"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="@string/offline"
+        android:textAllCaps="false"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/btnOnline"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="@string/online"
+        android:textAllCaps="false"
+        android:textSize="32sp" />
+
+</LinearLayout>

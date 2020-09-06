@@ -7,7 +7,7 @@
     android:background="@drawable/woods"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".GameActivity">
+    tools:context=".activity.EasyActivity">
 
     <TableLayout
         android:layout_width="@dimen/size_game_board"

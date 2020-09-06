@@ -9,7 +9,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp"
-    tools:context=".MenuActivity">
+    tools:context=".activity.MainActivity">
 
     <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/btnSinglePLayer"
