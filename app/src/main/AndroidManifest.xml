@@ -12,15 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.HardActivity"/>
+        <activity android:name=".activity.OnlineGameActivity"></activity>
+        <activity android:name=".activity.OnlineActivity" />
+        <activity android:name=".activity.HardActivity" />
         <activity android:name=".activity.OfflineActivity" />
-        <activity android:name=".activity.OnlineGameActivity" />
         <activity
             android:name=".activity.OnlineLoginActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".activity.EasyActivity"/>
+        <activity android:name=".activity.EasyActivity" />
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait" />

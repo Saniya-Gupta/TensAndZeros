@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import com.heer.multiplayer.activity.OnlineLoginActivity
 import com.heer.multiplayer.R
 import com.heer.multiplayer.activity.OfflineActivity
+import com.heer.multiplayer.activity.OnlineActivity
 
 class OnlineOfflineFragment : Fragment() {
 
@@ -27,7 +27,7 @@ class OnlineOfflineFragment : Fragment() {
             startActivity(Intent(activity, OfflineActivity::class.java))
         }
         btnOnline.setOnClickListener {
-            startActivity(Intent(activity, OnlineLoginActivity::class.java))
+            startActivity(Intent(activity, OnlineActivity::class.java))
         }
         return view
     }

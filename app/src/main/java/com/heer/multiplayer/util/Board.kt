@@ -139,7 +139,6 @@ class Board {
             }
             board[cell.i][cell.j] = ""
         }
-
         return if (player == COMPUTER) max else min
     }
 

@@ -27,5 +27,10 @@
     <string name="x_has_won">X has won</string>
     <string name="y_has_won">Y has won</string>
     <string name="tie">Tie</string>
+    <string name="username">User name</string>
+    <string name="shared_pref">TicTacToe Shared Preference</string>
+    <string name="accept_request">Accept Request</string>
+    <string name="send_request">Send Request</string>
+    <string name="users_online">Users Online</string>
 
 </resources>
