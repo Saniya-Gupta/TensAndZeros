@@ -155,39 +155,39 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
         if (player1 == currentPlayer) {
             when (imgTapped.id) {
                 R.id.img1 -> {
-                    img1.setImageResource(R.drawable.x)
+                    img1.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 1
                 }
                 R.id.img2 -> {
-                    img2.setImageResource(R.drawable.x)
+                    img2.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 2
                 }
                 R.id.img3 -> {
-                    img3.setImageResource(R.drawable.x)
+                    img3.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 3
                 }
                 R.id.img4 -> {
-                    img4.setImageResource(R.drawable.x)
+                    img4.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 4
                 }
                 R.id.img5 -> {
-                    img5.setImageResource(R.drawable.x)
+                    img5.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 5
                 }
                 R.id.img6 -> {
-                    img6.setImageResource(R.drawable.x)
+                    img6.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 6
                 }
                 R.id.img7 -> {
-                    img7.setImageResource(R.drawable.x)
+                    img7.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 7
                 }
                 R.id.img8 -> {
-                    img8.setImageResource(R.drawable.x)
+                    img8.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 8
                 }
                 else -> {
-                    img9.setImageResource(R.drawable.x)
+                    img9.setImageResource(R.drawable.cross)
                     movesCurrentPlayer += 9
                 }
             }
@@ -198,39 +198,39 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
         } else {
             when (imgTapped.id) {
                 R.id.img1 -> {
-                    img1.setImageResource(R.drawable.o)
+                    img1.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 1
                 }
                 R.id.img2 -> {
-                    img2.setImageResource(R.drawable.o)
+                    img2.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 2
                 }
                 R.id.img3 -> {
-                    img3.setImageResource(R.drawable.o)
+                    img3.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 3
                 }
                 R.id.img4 -> {
-                    img4.setImageResource(R.drawable.o)
+                    img4.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 4
                 }
                 R.id.img5 -> {
-                    img5.setImageResource(R.drawable.o)
+                    img5.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 5
                 }
                 R.id.img6 -> {
-                    img6.setImageResource(R.drawable.o)
+                    img6.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 6
                 }
                 R.id.img7 -> {
-                    img7.setImageResource(R.drawable.o)
+                    img7.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 7
                 }
                 R.id.img8 -> {
-                    img8.setImageResource(R.drawable.o)
+                    img8.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 8
                 }
                 else -> {
-                    img9.setImageResource(R.drawable.o)
+                    img9.setImageResource(R.drawable.circle)
                     movesCurrentPlayer += 9
                 }
             }
@@ -322,82 +322,81 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
                 when (Integer.parseInt(i + "")) {
                     1 -> {
                         img1.isEnabled = false
-                        img1.setImageResource(R.drawable.x)
+                        img1.setImageResource(R.drawable.cross)
                     }
                     2 -> {
                         img2.isEnabled = false
-                        img2.setImageResource(R.drawable.x)
+                        img2.setImageResource(R.drawable.cross)
                     }
                     3 -> {
                         img3.isEnabled = false
-                        img3.setImageResource(R.drawable.x)
+                        img3.setImageResource(R.drawable.cross)
                     }
                     4 -> {
                         img4.isEnabled = false
-                        img4.setImageResource(R.drawable.x)
+                        img4.setImageResource(R.drawable.cross)
                     }
                     5 -> {
                         img5.isEnabled = false
-                        img5.setImageResource(R.drawable.x)
+                        img5.setImageResource(R.drawable.cross)
                     }
                     6 -> {
                         img6.isEnabled = false
-                        img6.setImageResource(R.drawable.x)
+                        img6.setImageResource(R.drawable.cross)
                     }
                     7 -> {
                         img7.isEnabled = false
-                        img7.setImageResource(R.drawable.x)
+                        img7.setImageResource(R.drawable.cross)
                     }
                     8 -> {
                         img8.isEnabled = false
-                        img8.setImageResource(R.drawable.x)
+                        img8.setImageResource(R.drawable.cross)
                     }
                     else -> {
                         img9.isEnabled = false
-                        img9.setImageResource(R.drawable.x)
+                        img9.setImageResource(R.drawable.cross)
                     }
                 }
             } else {
                 when (Integer.parseInt(i + "")) {
                     1 -> {
                         img1.isEnabled = false
-                        img1.setImageResource(R.drawable.o)
+                        img1.setImageResource(R.drawable.circle)
                     }
                     2 -> {
                         img2.isEnabled = false
-                        img2.setImageResource(R.drawable.o)
+                        img2.setImageResource(R.drawable.circle)
                     }
                     3 -> {
                         img3.isEnabled = false
-                        img3.setImageResource(R.drawable.o)
+                        img3.setImageResource(R.drawable.circle)
                     }
                     4 -> {
                         img4.isEnabled = false
-                        img4.setImageResource(R.drawable.o)
+                        img4.setImageResource(R.drawable.circle)
                     }
                     5 -> {
                         img5.isEnabled = false
-                        img5.setImageResource(R.drawable.o)
+                        img5.setImageResource(R.drawable.circle)
                     }
                     6 -> {
                         img6.isEnabled = false
-                        img6.setImageResource(R.drawable.o)
+                        img6.setImageResource(R.drawable.circle)
                     }
                     7 -> {
                         img7.isEnabled = false
-                        img7.setImageResource(R.drawable.o)
+                        img7.setImageResource(R.drawable.circle)
                     }
                     8 -> {
                         img8.isEnabled = false
-                        img8.setImageResource(R.drawable.o)
+                        img8.setImageResource(R.drawable.circle)
                     }
                     else -> {
                         img9.isEnabled = false
-                        img9.setImageResource(R.drawable.o)
+                        img9.setImageResource(R.drawable.circle)
                     }
                 }
             }
         }
     }
-
 }

@@ -81,7 +81,7 @@ class HardActivity : AppCompatActivity() {
                 boardCells[i][j]?.setBackgroundColor(
                     ContextCompat.getColor(
                         this,
-                        R.color.colorPrimary
+                        R.color.colorBg
                     )
                 )
                 boardCells[i][j]?.setOnClickListener(CellClickListener(i, j))
@@ -117,7 +117,7 @@ class HardActivity : AppCompatActivity() {
                     }
                 }
                 else
-                //calling minimax to calculate the computers move
+                //calling mini max to calculate the computers move
                 {}*/
 
                 board.minimax(0, Board.COMPUTER)
@@ -133,9 +133,9 @@ class HardActivity : AppCompatActivity() {
             //Displaying the results
             //according to the game status
             when {
-                board.hasComputerWon() -> text_view_result.text = "Computer Won"
-                board.hasPlayerWon() -> text_view_result.text = "Player Won"
-                board.isGameOver -> text_view_result.text = "Game Tied"
+                board.hasComputerWon() -> text_view_result.text = getString(R.string.comp_won)
+                board.hasPlayerWon() -> text_view_result.text = getString(R.string.player_won)
+                board.isGameOver -> text_view_result.text = getString(R.string.tie)
             }
         }
     }

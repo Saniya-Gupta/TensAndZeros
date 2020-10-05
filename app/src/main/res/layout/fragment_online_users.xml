@@ -13,34 +13,32 @@
             android:id="@+id/txtHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:gravity="center_horizontal"
-            android:padding="8dp"
-            android:textSize="24sp"
+            android:layout_marginHorizontal="@dimen/margin_small"
+            android:paddingHorizontal="@dimen/paddingHorizontal"
+            android:paddingVertical="@dimen/paddingVertical"
+            android:textSize="@dimen/txt"
+            android:fontFamily="@font/alegreya_sc"
+            android:textColor="@color/colorBlack"
             android:text="@string/users_online" />
 
         <View
             android:id="@+id/line"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@+id/txtHeader"
-            android:background="@color/colorPrimary"/>
+            style="@style/line" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/line"
-            android:layout_margin="4dp"
-            android:padding="4dp" />
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingVertical="@dimen/paddingVertical"
+            android:paddingHorizontal="@dimen/paddingHorizontal" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/progressLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
-        tools:visibility="visible">
+        tools:visibility="gone"
+        style="@style/progressLayout">
 
         <ProgressBar
             android:layout_width="wrap_content"

@@ -1,44 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="8dp"
-    android:padding="4dp"
-    app:cardCornerRadius="4dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/paddingVerticalSmall"
+    app:cardCornerRadius="@dimen/cardCornerRadius">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/paddingVerticalSmall"
+        android:weightSum="2">
 
         <View
+            android:id="@+id/bullet"
             android:layout_width="0dp"
-            android:layout_height="4dp"
-            android:layout_gravity="center"
-            android:layout_weight="0.1"
+            android:layout_height="8dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="4dp"
-            android:paddingHorizontal="2dp"
-            android:background="@color/colorPrimary" />
+            android:layout_weight="0.03"
+            android:background="@color/colorPrimary"
+            android:paddingHorizontal="2dp" />
 
         <TextView
             android:id="@+id/txtUserName"
             android:layout_width="0dp"
-            android:layout_weight="1.3"
             android:layout_height="wrap_content"
-            tools:text="@string/username"
-            android:gravity="center_horizontal"
-            android:textSize="22sp"/>
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.37"
+            android:fontFamily="@font/architects_daughter"
+            android:padding="@dimen/paddingVerticalSmall"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt"
+            tools:text="@string/username" />
 
         <Button
             android:id="@+id/btnReqType"
-            android:layout_weight=".6"
+            style="@style/btn"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.6"
+            android:background="@drawable/bg_btn"
+            android:textSize="@dimen/txt_small"
             tools:text="@string/send_request" />
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

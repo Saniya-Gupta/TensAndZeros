@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/colorWhite"
     tools:context=".activity.HardActivity">
 
-    <ImageView
-        android:id="@+id/image_view_name"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/app_name"/>
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/margin_large"
+        android:fontFamily="@font/alegreya_sc"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/txt_extra_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/text_view_result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/layout_board"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/txt"
         android:textStyle="bold"
-        app:fontFamily="casual"
+        android:layout_margin="@dimen/margin_medium"
+        app:fontFamily="@font/architects_daughter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeader"
         tools:text="Computer Won" />
 
     <GridLayout
@@ -40,7 +48,12 @@
         android:columnCount="3"
         android:padding="16dp"
         android:rowCount="3"
-        android:useDefaultMargins="true" />
+        android:useDefaultMargins="true"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintBottom_toTopOf="@id/button_restart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_result" />
 
     <Button
         android:id="@+id/button_restart"
@@ -48,8 +61,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
         android:text="@string/replay"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:layout_marginBottom="@dimen/margin_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_board"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

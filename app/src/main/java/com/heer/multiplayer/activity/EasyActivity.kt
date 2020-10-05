@@ -108,24 +108,24 @@ class EasyActivity : AppCompatActivity() {
                 0 -> {
                     img00.isEnabled = false
                     if (player == 1)
-                        img00.setImageResource(R.drawable.x)
+                        img00.setImageResource(R.drawable.cross)
                     else
-                        img00.setImageResource(R.drawable.o)
+                        img00.setImageResource(R.drawable.circle)
 
                 }
                 1 -> {
                     img01.isEnabled = false
                     if (player == 1)
-                        img01.setImageResource(R.drawable.x)
+                        img01.setImageResource(R.drawable.cross)
                     else
-                        img01.setImageResource(R.drawable.o)
+                        img01.setImageResource(R.drawable.circle)
                 }
                 else -> {
                     img02.isEnabled = false
                     if (player == 1)
-                        img02.setImageResource(R.drawable.x)
+                        img02.setImageResource(R.drawable.cross)
                     else
-                        img02.setImageResource(R.drawable.o)
+                        img02.setImageResource(R.drawable.circle)
                 }
             }
 
@@ -133,23 +133,23 @@ class EasyActivity : AppCompatActivity() {
                 0 -> {
                     img10.isEnabled = false
                     if (player == 1)
-                        img10.setImageResource(R.drawable.x)
+                        img10.setImageResource(R.drawable.cross)
                     else
-                        img10.setImageResource(R.drawable.o)
+                        img10.setImageResource(R.drawable.circle)
                 }
                 1 -> {
                     img11.isEnabled = false
                     if (player == 1)
-                        img11.setImageResource(R.drawable.x)
+                        img11.setImageResource(R.drawable.cross)
                     else
-                        img11.setImageResource(R.drawable.o)
+                        img11.setImageResource(R.drawable.circle)
                 }
                 else -> {
                     img12.isEnabled = false
                     if (player == 1)
-                        img12.setImageResource(R.drawable.x)
+                        img12.setImageResource(R.drawable.cross)
                     else
-                        img12.setImageResource(R.drawable.o)
+                        img12.setImageResource(R.drawable.circle)
                 }
             }
 
@@ -157,23 +157,23 @@ class EasyActivity : AppCompatActivity() {
                 0 -> {
                     img20.isEnabled = false
                     if (player == 1)
-                        img20.setImageResource(R.drawable.x)
+                        img20.setImageResource(R.drawable.cross)
                     else
-                        img20.setImageResource(R.drawable.o)
+                        img20.setImageResource(R.drawable.circle)
                 }
                 1 -> {
                     img21.isEnabled = false
                     if (player == 1)
-                        img21.setImageResource(R.drawable.x)
+                        img21.setImageResource(R.drawable.cross)
                     else
-                        img21.setImageResource(R.drawable.o)
+                        img21.setImageResource(R.drawable.circle)
                 }
                 else -> {
                     img22.isEnabled = false
                     if (player == 1)
-                        img22.setImageResource(R.drawable.x)
+                        img22.setImageResource(R.drawable.cross)
                     else
-                        img22.setImageResource(R.drawable.o)
+                        img22.setImageResource(R.drawable.circle)
                 }
             }
         }

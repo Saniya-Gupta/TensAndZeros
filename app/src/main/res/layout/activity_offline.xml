@@ -9,137 +9,136 @@
         android:id="@+id/txtStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
         android:text="@string/statusX"
-        android:textColor="@color/colorX"
+        android:textColor="@color/colorRed"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReplay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/grid" />
+        app:layout_constraintTop_toBottomOf="@+id/txtStatus">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="420dp"
-        android:orientation="vertical"
-        android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView">
-
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="3dp">
 
             <ImageView
                 android:id="@+id/img0"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
                 android:tag="0" />
 
             <ImageView
                 android:id="@+id/img1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
-                android:tag="1"
-                tools:src="@drawable/o" />
+                android:tag="1" />
 
             <ImageView
                 android:id="@+id/img2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
                 android:tag="2"
-                tools:src="@drawable/x" />
-        </LinearLayout>
+                tools:src="@drawable/cross" />
 
-        <LinearLayout
+        </TableRow>
+
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="3dp">
 
             <ImageView
                 android:id="@+id/img3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
                 android:tag="3" />
 
             <ImageView
                 android:id="@+id/img4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
-                android:tag="4" />
+                android:tag="4"
+                tools:src="@drawable/circle" />
 
             <ImageView
                 android:id="@+id/img5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
                 android:tag="5" />
-        </LinearLayout>
 
-        <LinearLayout
+        </TableRow>
+
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="3dp">
 
             <ImageView
                 android:id="@+id/img6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
                 android:tag="6" />
 
             <ImageView
                 android:id="@+id/img7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
                 android:tag="7" />
 
             <ImageView
                 android:id="@+id/img8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
+                android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="tap"
-                android:padding="25dp"
                 android:tag="8" />
-        </LinearLayout>
+        </TableRow>
 
-    </LinearLayout>
+    </TableLayout>
 
     <Button
         android:id="@+id/btnReplay"
@@ -148,9 +147,7 @@
         android:text="@string/replay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Multiplayer</string>
+    <string name="app_name">Tic Tac Toe</string>
 
     <string name="online">Online</string>
     <string name="back">Back</string>
@@ -26,11 +26,30 @@
     <string name="statusX">X\'s turn - Tap to play</string>
     <string name="x_has_won">X has won</string>
     <string name="y_has_won">Y has won</string>
-    <string name="tie">Tie</string>
+    <string name="tie">Game Tied</string>
     <string name="username">User name</string>
     <string name="shared_pref">TicTacToe Shared Preference</string>
     <string name="accept_request">Accept Request</string>
     <string name="send_request">Send Request</string>
     <string name="users_online">Users Online</string>
+    <string name="header">header</string>
+    <string name="comp_won">Computer Won</string>
+    <string name="player_won">Player Won</string>
+    <string name="block">Block</string>
+    <string name="ok">Ok</string>
+    <string name="with_love">With Love</string>
+    <string name="select_a_level">Select a level</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="offline_or_online">Offline or Online?</string>
+    <string name="q1">What is Tic-Tac-Toe?</string>
+    <string name="ans1">Tic-Tac-Toe is a mind game where we use logic, intelligence and rational thinking with searching and sorting algorithm so that there exists no biasness to defeat the opponent.</string>
+    <string name="q2">What makes our game unique?</string>
+    <string name="ans2">The special computer unbeatable algorithm i.e. Mini-Max algorithm is used in this game which makes it unique and interest grabbing game for player.</string>
+    <string name="q3">Why Tic-Tac-Toe?</string>
+    <string name="ans3">We should go with this game as there are many options to choose for our entertainment like single and multi-player, offline game and online game which helps to connect players from different places and have fun.</string>
+    <string name="q4">Why did we choose Tic-Tac-Toe?</string>
+    <string name="ans4">As a fresher this game has given us opportunity to work on a real-life project using machine learning algorithm. Also we have understood online Firebase database connectivity and to finally build a user interactive app whose layout is consistent for all screen sizes.</string>
+    <string name="q5">Who are we?</string>
+    <string name="ans5">This app has been developed by \nSaniya Gupta and Anuradha Kumari as a part of project for our 5th Semester. We enjoyed working on this project and it turned out to be great learning experience as well.</string>
 
 </resources>

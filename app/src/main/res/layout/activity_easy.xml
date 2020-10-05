@@ -4,45 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/woods"
+    android:background="@color/colorWhite"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".activity.EasyActivity">
 
     <TableLayout
-        android:layout_width="@dimen/size_game_board"
-        android:layout_height="@dimen/size_game_board"
-        android:background="@drawable/board_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp">
+            android:layout_marginHorizontal="3dp">
 
             <ImageView
                 android:id="@+id/img00"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
             <ImageView
                 android:id="@+id/img01"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
             <ImageView
                 android:id="@+id/img02"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                tools:src="@drawable/cross"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
         </TableRow>
@@ -50,27 +55,34 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp">
+            android:layout_marginHorizontal="3dp">
 
             <ImageView
                 android:id="@+id/img10"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
             <ImageView
                 android:id="@+id/img11"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                tools:src="@drawable/circle"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
             <ImageView
                 android:id="@+id/img12"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
         </TableRow>
@@ -78,27 +90,33 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp">
+            android:layout_marginHorizontal="3dp">
 
             <ImageView
                 android:id="@+id/img20"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
             <ImageView
                 android:id="@+id/img21"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
 
             <ImageView
                 android:id="@+id/img22"
-                android:layout_width="@dimen/size_player_sign_image"
-                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_width="@dimen/blockSize"
+                android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
+                android:background="@color/colorBg"
+                android:contentDescription="@string/block"
                 android:onClick="onGameClick" />
         </TableRow>
 

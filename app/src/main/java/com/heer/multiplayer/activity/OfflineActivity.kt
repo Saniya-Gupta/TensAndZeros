@@ -46,15 +46,15 @@ class OfflineActivity : AppCompatActivity() {
             imgTapped.translationY = -1000f
             a++
             if (currentPlayer == 1) {
-                imgTapped.setImageResource(R.drawable.x)
+                imgTapped.setImageResource(R.drawable.cross)
                 txtStatus.text = getString(R.string.statusY)
-                txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorY))
+                txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorBlue))
                 currentPlayer = 0
             } else {
-                imgTapped.setImageResource(R.drawable.o)
+                imgTapped.setImageResource(R.drawable.circle)
                 currentPlayer = 1
                 txtStatus.text = getString(R.string.statusX)
-                txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorX))
+                txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorRed))
             }
             imgTapped.animate().translationYBy(1000f).duration = 300
         }
@@ -73,10 +73,10 @@ class OfflineActivity : AppCompatActivity() {
             ) {
                 if (gameState[i[0]] == 1) {
                     txtStatus.text = getString(R.string.x_has_won)
-                    txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorX))
+                    txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorRed))
                 } else {
                     txtStatus.text = getString(R.string.y_has_won)
-                    txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorY))
+                    txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorBlue))
                 }
                 gameActive = false
             }
@@ -93,7 +93,7 @@ class OfflineActivity : AppCompatActivity() {
     private fun reset(view: View) {
         a = 0
         txtStatus.text = getString(R.string.statusX)
-        txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorX))
+        txtStatus.setTextColor(ContextCompat.getColor(this, R.color.colorRed))
         gameActive = true
         currentPlayer = 1
         for (i in gameState.indices)

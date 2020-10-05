@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,35 +8,68 @@
     android:orientation="vertical"
     tools:context=".fragment.LevelsFragment">
 
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginTop="@dimen/margin_large"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/icon_primary_shadow"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/select_a_level"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/txt_medium"
+        app:layout_constraintBottom_toTopOf="@id/btnEasy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img" />
+
     <Button
         android:id="@+id/btnEasy"
-        android:layout_width="320dp"
+        style="@style/btn"
+        android:layout_width="@dimen/btn_width_large"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
+        android:paddingHorizontal="@dimen/paddingHorizontal"
         android:text="@string/easy"
-        android:textAllCaps="false"
-        android:textSize="32sp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btnMedium"
-        android:layout_width="320dp"
+        style="@style/btn"
+        android:layout_width="@dimen/btn_width_large"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
+        android:paddingHorizontal="@dimen/paddingHorizontal"
         android:text="@string/medium"
-        android:textAllCaps="false"
-        android:textSize="32sp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnHard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEasy" />
 
     <Button
         android:id="@+id/btnHard"
-        android:layout_width="320dp"
+        style="@style/btn"
+        android:layout_width="@dimen/btn_width_large"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:paddingHorizontal="@dimen/paddingHorizontal"
         android:text="@string/hard"
-        android:textAllCaps="false"
-        android:textSize="32sp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnMedium" />
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
