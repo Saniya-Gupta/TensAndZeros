@@ -4,16 +4,17 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import com.heer.multiplayer.R
+import com.heer.multiplayer.activity.OnlineActivity
 
 class OnlineGameFragment : Fragment(), View.OnClickListener {
 
@@ -26,16 +27,20 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
     private lateinit var img7: ImageView
     private lateinit var img8: ImageView
     private lateinit var img9: ImageView
-    private lateinit var txtPlayerTurn: TextView
+    private lateinit var txtGameStatus: TextView
     private lateinit var database: FirebaseDatabase
     private lateinit var myRef: DatabaseReference
     private lateinit var sharedPreferences: SharedPreferences
     private var player1: String = ""
     private var player2: String = ""
     private var anotherPlayer = ""
+    private lateinit var btnReplay: Button
     private var currentPlayer = ""
     private var movesCurrentPlayer = ""
-    private var gameState = 1 // 1 -> Game Active 0 -> Game won or draw
+    private var gameState = 1
+
+    // 1 -> Game Active
+    // 0 -> Game won or draw
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +50,13 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
         init(view)
         enableClick()
         prepareGameSpace()
+        btnReplay.setOnClickListener {
+            myRef.child("playing").child("$player1:$player2")
+                .child("exit").setValue("1")
+            myRef.child("playing").child("$player1:$player2")
+                .child("activePlayer").setValue(currentPlayer)
+            btnReplay.isEnabled = false
+        }
         return view
     }
 
@@ -67,7 +79,7 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
         img8.setOnClickListener(this)
         img9 = view.findViewById(R.id.img9)
         img9.setOnClickListener(this)
-        txtPlayerTurn = view.findViewById(R.id.txtPlayerTurn)
+        txtGameStatus = view.findViewById(R.id.txtGameStatus)
         sharedPreferences = activity!!.getSharedPreferences(
             getString(R.string.shared_pref),
             Context.MODE_PRIVATE
@@ -84,6 +96,10 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
             player2
         else
             player1
+        btnReplay = view.findViewById(R.id.btnReplay)
+        btnReplay.isEnabled = false
+
+        (activity as OnlineActivity).supportActionBar?.title = "Online Game"
     }
 
     private fun enableClick() {
@@ -111,35 +127,64 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
     }
 
     private fun prepareGameSpace() {
-        myRef.child("users").child("playing")
+        myRef.child("playing")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.hasChildren()) {
-                        if (snapshot.child("$player1:$player2").exists()) {
-                            movesCurrentPlayer = snapshot.child("$player1:$player2")
-                                .child(currentPlayer).value.toString()
-                            val movesAnotherPlayer = snapshot.child("$player1:$player2")
-                                .child(anotherPlayer).value.toString()
-                            checkWinner(movesCurrentPlayer, movesAnotherPlayer)
-                            gameState = Integer.parseInt(
-                                snapshot.child("$player1:$player2").child("exit").value.toString()
-                            )
-                            val activeStatePlayer = snapshot.child("$player1:$player2")
-                                .child("activePlayer").value.toString()
-                            if (gameState == 0) {
-                                show(activeStatePlayer)
-                            } else if (activeStatePlayer == currentPlayer) {
-                                disableClickCurrentPlayer(movesCurrentPlayer, currentPlayer)
-                                disableClickCurrentPlayer(movesAnotherPlayer, anotherPlayer)
+                        if(activity != null) {
+                            if (snapshot.child("$player1:$player2").exists()) {
+                                movesCurrentPlayer = snapshot.child("$player1:$player2")
+                                    .child(currentPlayer).value.toString()
+                                val movesAnotherPlayer = snapshot.child("$player1:$player2")
+                                    .child(anotherPlayer).value.toString()
+                                checkWinner(movesCurrentPlayer, movesAnotherPlayer)
+                                gameState = Integer.parseInt(
+                                    snapshot.child("$player1:$player2")
+                                        .child("exit").value as String
+                                )
+                                val activeStatePlayer = snapshot.child("$player1:$player2")
+                                    .child("activePlayer").value.toString()
+
+                                when {
+                                    gameState == 0 -> {
+                                        if (activeStatePlayer == "draw") {
+                                            txtGameStatus.text = "Draw"
+                                        } else {
+                                            if(activeStatePlayer == currentPlayer) {
+                                                txtGameStatus.text = "You have won"
+                                            } else {
+                                                txtGameStatus.text = "$activeStatePlayer has won"
+                                            }
+                                        }
+
+                                        myRef.child("playing").child("$player1:$player2")
+                                            .child(player1).setValue("")
+                                        myRef.child("playing").child("$player1:$player2")
+                                            .child(player2).setValue("")
+                                        btnReplay.isEnabled = true
+
+                                    }
+                                    activeStatePlayer == currentPlayer -> {
+                                        txtGameStatus.text = "Your turn"
+                                        btnReplay.isEnabled = false
+                                        disableClickCurrentPlayer(movesCurrentPlayer, currentPlayer)
+                                        disableClickCurrentPlayer(movesAnotherPlayer, anotherPlayer)
+                                    }
+                                    else -> {
+                                        txtGameStatus.text = "Another's turn"
+                                        btnReplay.isEnabled = false
+                                        disableClickCurrentPlayer(movesCurrentPlayer, currentPlayer)
+                                        disableClickCurrentPlayer(movesAnotherPlayer, anotherPlayer)
+                                        disableClick()
+                                    }
+                                }
+
                             } else {
-                                disableClickCurrentPlayer(movesCurrentPlayer, currentPlayer)
-                                disableClickCurrentPlayer(movesAnotherPlayer, anotherPlayer)
-                                disableClick()
+                                activity?.finish()
                             }
-                        } else {
-                            Toast.makeText(activity, "Game ended", Toast.LENGTH_SHORT).show()
-                            activity!!.finish()
                         }
+                    } else {
+                        activity?.finish()
                     }
                 }
 
@@ -191,9 +236,9 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
                     movesCurrentPlayer += 9
                 }
             }
-            myRef.child("users").child("playing").child("$player1:$player2")
+            myRef.child("playing").child("$player1:$player2")
                 .child(currentPlayer).setValue(movesCurrentPlayer)
-            myRef.child("users").child("playing").child("$player1:$player2")
+            myRef.child("playing").child("$player1:$player2")
                 .child("activePlayer").setValue(anotherPlayer)
         } else {
             when (imgTapped.id) {
@@ -234,9 +279,9 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
                     movesCurrentPlayer += 9
                 }
             }
-            myRef.child("users").child("playing").child("$player1:$player2")
+            myRef.child("playing").child("$player1:$player2")
                 .child(currentPlayer).setValue(movesCurrentPlayer)
-            myRef.child("users").child("playing").child("$player1:$player2")
+            myRef.child("playing").child("$player1:$player2")
                 .child("activePlayer").setValue(anotherPlayer)
         }
 
@@ -258,62 +303,19 @@ class OnlineGameFragment : Fragment(), View.OnClickListener {
                     break
                 }
             }
-            if (movesAnotherPlayer.length + movesCurrentPlayer.length >= 9) {
-                myRef.child("users").child("playing").child("$player1:$player2")
-                    .child("activePlayer").setValue("draw")
-                myRef.child("users").child("playing").child("$player1:$player2")
-                    .child("exit")
-                    .setValue(0)
-            }
             if (flag == 1) {
-                myRef.child("users").child("playing").child("$player1:$player2")
-                    .child("activePlayer").setValue("$currentPlayer:$anotherPlayer")
-                myRef.child("users").child("playing").child("$player1:$player2").child("exit")
-                    .setValue(0)
+                myRef.child("playing").child("$player1:$player2")
+                    .child("activePlayer").setValue(currentPlayer)
+                myRef.child("playing").child("$player1:$player2").child("exit")
+                    .setValue("0")
+            } else if (movesAnotherPlayer.length + movesCurrentPlayer.length >= 9) {
+                myRef.child("playing").child("$player1:$player2")
+                    .child("activePlayer").setValue("draw")
+                myRef.child("playing").child("$player1:$player2")
+                    .child("exit")
+                    .setValue("0")
             }
         }
-    }
-
-    private fun show(msg: String) {
-        Log.d("Tag", "msg = $msg")
-        val display = if (msg == "draw") {
-            "Draw"
-        } else {
-            "${msg.substring(0, msg.indexOf(":"))} has won against ${msg.substring(msg.indexOf(":") + 1)}"
-        }
-        if (activity != null) {
-            AlertDialog.Builder(activity).setTitle("New Game?")
-                .setMessage(display)
-                .setCancelable(false)
-                .setPositiveButton("Yes") { _, _ ->
-                    if(display == "Draw")
-                        replayGame(player1)
-                    else {
-                        replayGame(display.substring(0, display.indexOf(" ")))
-                    }
-                }
-                .setNegativeButton("No") { _, _ ->
-                    resetGame()
-                    activity?.finish()
-                }
-                .create()
-                .show()
-        }
-    }
-
-    private fun resetGame() {
-        myRef.child("users").child(player1).setValue("")
-        myRef.child("users").child(player2).setValue("")
-        myRef.child("users").child("playing").child("$player1:$player2").removeValue()
-        sharedPreferences.edit().remove("playing").apply()
-    }
-
-    private fun replayGame(firstPlayer: String) {
-        myRef.child("users").child("playing").child("$player1:$player2").child(player1).setValue("")
-        myRef.child("users").child("playing").child("$player1:$player2").child(player2).setValue("")
-        myRef.child("users").child("playing").child("$player1:$player2").child("exit").setValue(1)
-        myRef.child("users").child("playing").child("$player1:$player2").child("activePlayer")
-            .setValue(firstPlayer)
     }
 
     private fun disableClickCurrentPlayer(moves: String, player: String) {

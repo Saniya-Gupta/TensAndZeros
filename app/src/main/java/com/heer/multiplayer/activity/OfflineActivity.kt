@@ -31,6 +31,7 @@ class OfflineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_offline)
+        title = "Offline Game"
         txtStatus = findViewById(R.id.txtStatus)
         btnReplay = findViewById(R.id.btnReplay)
         btnReplay.isEnabled = false

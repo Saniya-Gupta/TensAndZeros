@@ -11,12 +11,14 @@ import android.widget.Toast
 import com.heer.multiplayer.R
 import com.heer.multiplayer.activity.EasyActivity
 import com.heer.multiplayer.activity.HardActivity
+import com.heer.multiplayer.activity.MainActivity
+import com.heer.multiplayer.activity.OnlineActivity
 
 class LevelsFragment : Fragment() {
 
-    lateinit var btnEasy: Button
-    lateinit var btnMedium: Button
-    lateinit var btnHard: Button
+    private lateinit var btnEasy: Button
+    //private lateinit var btnMedium: Button
+    private lateinit var btnHard: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,10 +30,10 @@ class LevelsFragment : Fragment() {
         btnEasy.setOnClickListener {
             startActivity(Intent(activity, EasyActivity::class.java))
         }
-        btnMedium.setOnClickListener {
+  /*      btnMedium.setOnClickListener {
             Toast.makeText(activity, "Medium", Toast.LENGTH_SHORT).show()
         }
-        btnHard.setOnClickListener {
+  */      btnHard.setOnClickListener {
             startActivity(Intent(activity, HardActivity::class.java))
         }
         return view
@@ -39,7 +41,8 @@ class LevelsFragment : Fragment() {
 
     private fun init(view: View) {
         btnEasy = view.findViewById(R.id.btnEasy)
-        btnMedium = view.findViewById(R.id.btnMedium)
+//        btnMedium = view.findViewById(R.id.btnMedium)
         btnHard = view.findViewById(R.id.btnHard)
+        (activity as MainActivity).supportActionBar?.title = "Single Player Mode"
     }
 }

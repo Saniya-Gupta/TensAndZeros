@@ -57,12 +57,12 @@
         android:paddingHorizontal="@dimen/paddingHorizontal"
         android:paddingVertical="@dimen/paddingVerticalSmall"
         android:text="@string/multiPlayer"
-        app:layout_constraintBottom_toTopOf="@id/btnLeaderBoard"
+        app:layout_constraintBottom_toTopOf="@id/btnAbout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSinglePLayer" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btnLeaderBoard"
         style="@style/btn"
         android:layout_width="@dimen/btn_width_large"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMultiPlayer" />
-
+-->
     <Button
         android:id="@+id/btnAbout"
         style="@style/btn"
@@ -88,7 +88,7 @@
         app:layout_constraintBottom_toTopOf="@id/btnExit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLeaderBoard" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMultiPlayer" />
 
     <Button
         android:id="@+id/btnExit"

@@ -21,4 +21,5 @@
     <dimen name="txt_small">18sp</dimen>
     <dimen name="txt">24sp</dimen>
     <dimen name="txt_medium">24sp</dimen>
+    <dimen name="btn_width_medium">120dp</dimen>
 </resources>

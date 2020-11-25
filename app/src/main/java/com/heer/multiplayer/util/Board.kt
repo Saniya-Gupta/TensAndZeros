@@ -1,5 +1,7 @@
 package com.heer.multiplayer.util
 import com.heer.multiplayer.model.Cell
+import kotlin.math.max
+import kotlin.math.min
 
 class Board {
 
@@ -15,7 +17,7 @@ class Board {
 
     //This property is giving us
     //a list of all the empty cells
-    val availableCells: List<Cell>
+    private val availableCells: List<Cell>
         get() {
 
             val cells = mutableListOf<Cell>()
@@ -112,7 +114,7 @@ class Board {
             if (player == COMPUTER) {
                 placeMove(cell, COMPUTER)
                 val currentScore = minimax(depth + 1, PLAYER)
-                max = Math.max(currentScore, max)
+                max = max(currentScore, max)
 
                 if (currentScore >= 0) {
                     if (depth == 0) computersMove = cell
@@ -130,7 +132,7 @@ class Board {
             } else if (player == PLAYER) {
                 placeMove(cell, PLAYER)
                 val currentScore = minimax(depth + 1, COMPUTER)
-                min = Math.min(currentScore, min)
+                min = min(currentScore, min)
 
                 if (min == -1) {
                     board[cell.i][cell.j] = ""

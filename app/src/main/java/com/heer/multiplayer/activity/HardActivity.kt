@@ -23,6 +23,7 @@ class HardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hard)
 
+        title = "Hard Game"
         loadBoard()
 
         //restart functionality

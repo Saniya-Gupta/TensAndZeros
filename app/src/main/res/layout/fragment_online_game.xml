@@ -7,16 +7,16 @@
     tools:context=".fragment.OnlineGameFragment">
 
     <TextView
-        android:id="@+id/txtPlayerTurn"
+        android:id="@+id/txtGameStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_small"
+        android:fontFamily="@font/architects_daughter"
         android:padding="@dimen/paddingVertical"
-        android:textColor="@color/colorPrimary"
-        android:fontFamily="@font/alegreya_sc"
+        android:textColor="@color/colorBlack"
         android:textSize="@dimen/txt"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/username" />
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlayerTurn">
+        app:layout_constraintTop_toBottomOf="@+id/txtGameStatus">
 
         <TableRow
             android:layout_width="match_parent"
@@ -124,5 +124,18 @@
                 android:contentDescription="@string/block" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/btnReplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
+        android:text="@string/replay"
+        android:textSize="@dimen/txt_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

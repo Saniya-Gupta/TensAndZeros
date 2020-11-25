@@ -1,10 +1,11 @@
 package com.heer.multiplayer.activity
 
-import android.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.heer.multiplayer.R
 import java.util.*
 
@@ -23,11 +24,22 @@ class EasyActivity : AppCompatActivity() {
     private lateinit var img20: ImageView
     private lateinit var img21: ImageView
     private lateinit var img22: ImageView
+    private lateinit var txtPlayerStatus: TextView
+    private lateinit var btnReplay: Button
+    private lateinit var txtCountTimer: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_easy)
+        title = "Easy Game"
+        init()
+        txtPlayerStatus.text = getString(R.string.player_turn)
+        btnReplay.setOnClickListener {
+            resetGame()
+        }
+    }
 
+    private fun init() {
         img00 = findViewById(R.id.img00)
         img01 = findViewById(R.id.img01)
         img02 = findViewById(R.id.img02)
@@ -37,11 +49,13 @@ class EasyActivity : AppCompatActivity() {
         img20 = findViewById(R.id.img20)
         img21 = findViewById(R.id.img21)
         img22 = findViewById(R.id.img22)
+        txtPlayerStatus = findViewById(R.id.txtPlayerStatus)
+        btnReplay = findViewById(R.id.btnReplay)
+        txtCountTimer = findViewById(R.id.txtCountTimer)
     }
 
     fun onGameClick(view: View) {
         val blockSelected: ImageView = view as ImageView
-
         when (checkWinnerIfAny()) {
             0 -> {
                 moves += 1
@@ -56,15 +70,18 @@ class EasyActivity : AppCompatActivity() {
                     R.id.img21 -> fillBlock(2, 1, 1)
                     R.id.img22 -> fillBlock(2, 2, 1)
                 }
+                txtPlayerStatus.text = getString(R.string.comp_turn)
+                autoPlayUsingRandom()
             }
-            1 -> displayResult("X has won")
-            4 -> displayResult("Draw")
-            else -> displayResult("Y has won")
+            1 -> displayResult("You have won")
+            4 -> displayResult("Game tied")
+            else -> displayResult("Computer won")
         }
-        autoPlayUsingRandom()
     }
 
     private fun displayResult(msg: String) {
+        txtPlayerStatus.text = msg
+/*
         AlertDialog.Builder(this).setTitle("New Game?")
             .setMessage(msg)
             .setCancelable(false)
@@ -77,6 +94,7 @@ class EasyActivity : AppCompatActivity() {
             .setIcon(android.R.drawable.ic_dialog_info)
             .create()
             .show()
+*/
     }
 
     private fun autoPlayUsingRandom() // easy level since computer hardly ever wins
@@ -92,14 +110,29 @@ class EasyActivity : AppCompatActivity() {
                     row = r.nextInt(3)
                     column = r.nextInt(3)
                 }
-
                 fillBlock(row, column, 2)
+                txtPlayerStatus.text = getString(R.string.player_turn)
             }
-            1 -> displayResult("X has won")
-            4 -> displayResult("Draw")
-            else -> displayResult("Y has won")
+            1 -> displayResult("You have won")
+            4 -> displayResult("Game tied")
+            else -> displayResult("Computer won")
         }
     }
+
+/*
+    private fun showTimer(msg: String) {
+        var counter = 2
+        object : CountDownTimer(3000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                txtCountTimer.text = java.lang.String.valueOf(counter)
+                counter--
+            }
+            override fun onFinish() {
+                txtPlayerStatus.text = msg
+            }
+        }.start()
+    }
+*/
 
     private fun fillBlock(row: Int, column: Int, player: Int) {
         boardState[row][column] = player
@@ -181,7 +214,7 @@ class EasyActivity : AppCompatActivity() {
     }
 
     private fun resetGame() {
-
+        txtPlayerStatus.text = getString(R.string.player_turn)
         moves = 0
         gameState = 0
 

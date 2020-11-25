@@ -12,20 +12,20 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.heer.multiplayer.R
+import com.heer.multiplayer.activity.MainActivity
 
 class MenuFragment : Fragment() {
 
-    lateinit var btnSinglePlayer: Button
-    lateinit var btnMultiPlayer: Button
-    lateinit var btnLeaderBoard: Button
-    lateinit var btnAbout: Button
-    lateinit var btnExit: Button
+    private lateinit var btnSinglePlayer: Button
+    private lateinit var btnMultiPlayer: Button
+//    private lateinit var btnLeaderBoard: Button
+    private lateinit var btnAbout: Button
+    private lateinit var btnExit: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_menu, container, false)
         init(view)
         btnSinglePlayer.setOnClickListener {
@@ -40,11 +40,14 @@ class MenuFragment : Fragment() {
                 OnlineOfflineFragment()
             )?.commit()
         }
-        btnLeaderBoard.setOnClickListener {
+  /*      btnLeaderBoard.setOnClickListener {
             Toast.makeText(activity, "Clicked LeaderBoard", Toast.LENGTH_SHORT).show()
         }
-        btnAbout.setOnClickListener {
-            Toast.makeText(activity, "Clicked About", Toast.LENGTH_SHORT).show()
+  */      btnAbout.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()?.replace(
+                R.id.fl,
+                AboutFragment()
+            )?.commit()
         }
         btnExit.setOnClickListener {
             AlertDialog.Builder(activity as Context).setTitle("End Game")
@@ -61,8 +64,9 @@ class MenuFragment : Fragment() {
     private fun init(view: View) {
         btnSinglePlayer = view.findViewById(R.id.btnSinglePLayer)
         btnMultiPlayer = view.findViewById(R.id.btnMultiPlayer)
-        btnLeaderBoard = view.findViewById(R.id.btnLeaderBoard)
+    //    btnLeaderBoard = view.findViewById(R.id.btnLeaderBoard)
         btnAbout = view.findViewById(R.id.btnAbout)
         btnExit = view.findViewById(R.id.btnExit)
+        (activity as MainActivity).supportActionBar?.title = "Main Menu"
     }
 }

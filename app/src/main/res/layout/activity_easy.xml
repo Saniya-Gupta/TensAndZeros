@@ -5,11 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:gravity="center"
-    android:orientation="vertical"
     tools:context=".activity.EasyActivity">
 
+    <TextView
+        android:id="@+id/txtPlayerStatus"
+        style="@style/txtHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtCountTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/txtCountTimer"
+        style="@style/txtBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlayerStatus"
+        tools:text="2" />
+
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,9 +67,9 @@
                 android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
                 android:background="@color/colorBg"
-                tools:src="@drawable/cross"
                 android:contentDescription="@string/block"
-                android:onClick="onGameClick" />
+                android:onClick="onGameClick"
+                tools:src="@drawable/cross" />
 
         </TableRow>
 
@@ -68,13 +89,13 @@
 
             <ImageView
                 android:id="@+id/img11"
-                tools:src="@drawable/circle"
                 android:layout_width="@dimen/blockSize"
                 android:layout_height="@dimen/blockSize"
                 android:layout_margin="3dp"
                 android:background="@color/colorBg"
                 android:contentDescription="@string/block"
-                android:onClick="onGameClick" />
+                android:onClick="onGameClick"
+                tools:src="@drawable/circle" />
 
             <ImageView
                 android:id="@+id/img12"
@@ -121,5 +142,16 @@
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/btnReplay"
+        style="@style/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/replay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

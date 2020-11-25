@@ -8,13 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.heer.multiplayer.R
+import com.heer.multiplayer.activity.MainActivity
 import com.heer.multiplayer.activity.OfflineActivity
 import com.heer.multiplayer.activity.OnlineActivity
 
 class OnlineOfflineFragment : Fragment() {
 
-    lateinit var btnOffline: Button
-    lateinit var btnOnline: Button
+    private lateinit var btnOffline: Button
+    private lateinit var btnOnline: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,5 +36,6 @@ class OnlineOfflineFragment : Fragment() {
     private fun init(view: View) {
         btnOffline = view.findViewById(R.id.btnOffline)
         btnOnline = view.findViewById(R.id.btnOnline)
+        (activity as MainActivity).supportActionBar?.title = "Multi Player Mode"
     }
 }

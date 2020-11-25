@@ -42,12 +42,12 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/paddingHorizontal"
         android:text="@string/easy"
-        app:layout_constraintBottom_toTopOf="@+id/btnMedium"
+        app:layout_constraintBottom_toTopOf="@+id/btnHard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btnMedium"
         style="@style/btn"
         android:layout_width="@dimen/btn_width_large"
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEasy" />
-
+-->
     <Button
         android:id="@+id/btnHard"
         style="@style/btn"
@@ -70,6 +70,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnMedium" />
+        app:layout_constraintTop_toBottomOf="@id/btnEasy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

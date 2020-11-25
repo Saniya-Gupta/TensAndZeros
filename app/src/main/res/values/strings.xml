@@ -9,18 +9,15 @@
     <string name="please_wait">Please Wait…</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="single_player">Single Player</string>
     <string name="multiPlayer">Multi Player</string>
     <string name="leaderBoard">Leader Board</string>
     <string name="about">About</string>
-    <string name="exit">Exit</string>
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
     <string name="offline">Offline</string>
-    <string name="replay">Replay</string>
 
     <string name="statusY">Y\'s turn - Tap to Play</string>
     <string name="statusX">X\'s turn - Tap to play</string>
@@ -29,18 +26,27 @@
     <string name="tie">Game Tied</string>
     <string name="username">User name</string>
     <string name="shared_pref">TicTacToe Shared Preference</string>
-    <string name="accept_request">Accept Request</string>
-    <string name="send_request">Send Request</string>
+
+    <string name="accept_request">Accept</string>
+    <string name="send_request">Send</string>
+    <string name="sent">Sent</string>
+    <string name="done">Done</string>
+
     <string name="users_online">Users Online</string>
     <string name="header">header</string>
+
+    <string name="player_turn">Player\'s turn</string>
+    <string name="comp_turn">Computer\'s turn</string>
     <string name="comp_won">Computer Won</string>
-    <string name="player_won">Player Won</string>
+    <string name="player_won">You Won</string>
+
     <string name="block">Block</string>
-    <string name="ok">Ok</string>
+    <string name="ok">Okay</string>
     <string name="with_love">With Love</string>
     <string name="select_a_level">Select a level</string>
     <string name="enter_your_username">Enter your username</string>
     <string name="offline_or_online">Offline or Online?</string>
+
     <string name="q1">What is Tic-Tac-Toe?</string>
     <string name="ans1">Tic-Tac-Toe is a mind game where we use logic, intelligence and rational thinking with searching and sorting algorithm so that there exists no biasness to defeat the opponent.</string>
     <string name="q2">What makes our game unique?</string>
@@ -51,5 +57,12 @@
     <string name="ans4">As a fresher this game has given us opportunity to work on a real-life project using machine learning algorithm. Also we have understood online Firebase database connectivity and to finally build a user interactive app whose layout is consistent for all screen sizes.</string>
     <string name="q5">Who are we?</string>
     <string name="ans5">This app has been developed by \nSaniya Gupta and Anuradha Kumari as a part of project for our 5th Semester. We enjoyed working on this project and it turned out to be great learning experience as well.</string>
+
+    <string name="imgGameStatus">ImgGameStatus</string>
+    <string name="replay">Replay</string>
+    <string name="exit">Exit</string>
+    <string name="draw">Draw</string>
+    <string name="win">You have won</string>
+    <string name="lost">You have lost</string>
 
 </resources>
